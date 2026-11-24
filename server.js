@@ -56,7 +56,7 @@ app.post("/mensagens", (req, res) => {
     const id = lista.reduce((maior, m) => Math.max(maior, Number(m.id) || 0), 0) + 1;
     const nova = { id, usuario: usuario.trim(), texto: texto.trim(), data: new Date().toISOString() };
     await salvarMensagens([...lista, nova]);
-    return nova;
+    return nova; // Guilherme
   });
   fila = tarefa.catch(() => {}); // mantém a fila utilizável após uma falha
   tarefa.then(nova => res.status(201).json(nova)).catch(erro => {
