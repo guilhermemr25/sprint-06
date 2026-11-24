@@ -43,7 +43,7 @@ formulario.addEventListener('submit', async evento => {
         });
         const dados = await resposta.json();
         if (!resposta.ok) throw new Error(dados.erro ?? 'Falha ao enviar.');
-        texto.value = '';
+        texto.value = ''; // Guilherme
         aviso.textContent = 'Mensagem enviada!';
         await atualizarMensagens();
     } catch (erro) { aviso.textContent = erro.message; }
